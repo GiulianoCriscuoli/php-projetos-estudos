@@ -1,0 +1,15 @@
+{
+    "name": "gdias/php-projetos-estudos",
+    "autoload": {
+        "psr-4": {
+            "Projetos\\PhpProjetosEstudos\\": "src"
+        }
+    },
+    "authors": [
+        {
+            "name": "giulianoCriscuoli",
+            "email": "giulianodias3@hotmail.com"
+        }
+    ],
+    "require": {}
+}

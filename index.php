@@ -1,42 +1,15 @@
 <?php
 
-$msg = '';
+    require __DIR__. '/vendor/autoload.php';
 
-$login = $_POST['login'] ?? '';
-$password = $_POST['password'] ?? '';
+    use Projetos\PhpProjetosEstudos\ContaBancaria;
 
-// setcookie('cookie', 'olá mundo');
+    $conta = new ContaBancaria("Nu Pagamentos", "0001", "34355440-8", 3000.00);
 
-// print_r($_COOKIE);
-
-if($_SERVER['REQUEST_METHOD'] === 'POST') {
-    !empty($login) && !empty($password) ?  $msg = 'Usuário logado' : $msg = 'Usuário ou senha incorretos';
-}
+    // $conta->setBanco("Nu Pagamentos");
+    // $conta->setAgencia("0001");
+    // $conta->setConta("34355440-8");
     
+    var_dump($conta->exibeDetalhesConta());
+
 ?>
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-
-    <form action="" method="POST">
-        <input type="login" name="login" placeholder="Digite o login" value="<?= $login ?>">
-        <br>
-        <input type="password" name="password" placeholder="Digite a senha" value="<?= $password ?>">
-
-        <input type="submit" value="Enviar">
-    </form>
-
-    <?php
-
-        echo $msg;
-    ?>
-
-</body>
-</html>
